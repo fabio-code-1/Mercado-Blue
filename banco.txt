@@ -1,0 +1,192 @@
+--
+-- Estrutura da tabela `administradores`
+--
+ 
+CREATE TABLE IF NOT EXISTS `administradores` (
+  `id_administrador` int(11) NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(45) DEFAULT NULL,
+  `senha` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_administrador`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `carrinho`
+--
+ 
+CREATE TABLE IF NOT EXISTS `carrinho` (
+  `idcarrinho` int(11) NOT NULL AUTO_INCREMENT,
+  `idproduto` int(11) DEFAULT NULL,
+  `qtd_produto` int(11) DEFAULT NULL,
+  `session` text,
+  `comprou` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`idcarrinho`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `categorias`
+--
+ 
+CREATE TABLE IF NOT EXISTS `categorias` (
+  `id_categoria` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao_categoria` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_categoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `clientes`
+--
+ 
+CREATE TABLE IF NOT EXISTS `clientes` (
+  `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(45) DEFAULT NULL,
+  `senha` varchar(45) DEFAULT NULL,
+  `nome` varchar(45) DEFAULT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  `ddd_telefone` varchar(3) DEFAULT NULL,
+  `telefone` varchar(15) DEFAULT NULL,
+  `ddd_celular` varchar(3) DEFAULT NULL,
+  `celular` varchar(15) DEFAULT NULL,
+  `data_cadastro` date DEFAULT NULL,
+  PRIMARY KEY (`id_cliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `comentarios`
+--
+ 
+CREATE TABLE IF NOT EXISTS `comentarios` (
+  `id_comentario` int(11) NOT NULL AUTO_INCREMENT,
+  `id_produto` int(11) DEFAULT NULL,
+  `comentario` varchar(255) DEFAULT NULL,
+  `avaliacao` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`id_comentario`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `enderecos`
+--
+ 
+CREATE TABLE IF NOT EXISTS `enderecos` (
+  `id_endereco` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(11) DEFAULT NULL,
+  `cep_origem` varchar(9) DEFAULT NULL,
+  `cep_destino` varchar(9) DEFAULT NULL,
+  `numero` int(11) DEFAULT NULL,
+  `complemento` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_endereco`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `formas_de_envio`
+--
+ 
+CREATE TABLE IF NOT EXISTS `formas_de_envio` (
+  `id_forma_envio` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao_forma_envio` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_forma_envio`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `formas_de_pagamento`
+--
+ 
+CREATE TABLE IF NOT EXISTS `formas_de_pagamento` (
+  `id_forma_pagamento` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao_forma_pagamento` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_forma_pagamento`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `pedidos`
+--
+ 
+CREATE TABLE IF NOT EXISTS `pedidos` (
+  `id_pedido` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cliente` int(11) DEFAULT NULL,
+  `data_pedido` date DEFAULT NULL,
+  PRIMARY KEY (`id_pedido`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `produtos`
+--
+ 
+CREATE TABLE IF NOT EXISTS `produtos` (
+  `id_produto` int(11) NOT NULL AUTO_INCREMENT,
+  `id_subcategoria` int(11) DEFAULT NULL,
+  `titulo` varchar(100) DEFAULT NULL,
+  `descricao_produto` varchar(255) DEFAULT NULL,
+  `ano` date DEFAULT NULL,
+  `editora` varchar(100) DEFAULT NULL,
+  `edicao` tinyint(2) DEFAULT NULL,
+  `paginas` tinyint(4) DEFAULT NULL,
+  `imagem` varchar(100) DEFAULT NULL,
+  `oferta` tinyint(1) DEFAULT NULL,
+  `id_administrador` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_produto`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `produtos_pedidos`
+--
+ 
+CREATE TABLE IF NOT EXISTS `produtos_pedidos` (
+  `id_produto` int(11) NOT NULL,
+  `id_pedido` int(11) DEFAULT NULL,
+  `quantidade` tinyint(4) DEFAULT NULL,
+  `valor_unitario` float DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `subcategorias`
+--
+ 
+CREATE TABLE IF NOT EXISTS `subcategorias` (
+  `id_subcategoria` int(11) NOT NULL AUTO_INCREMENT,
+  `id_categoria` int(11) DEFAULT NULL,
+  `descricao_subcategoria` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_subcategoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+ 
+-- --------------------------------------------------------
+ 
+--
+-- Estrutura da tabela `vendas`
+--
+ 
+CREATE TABLE IF NOT EXISTS `vendas` (
+  `id_venda` int(11) NOT NULL AUTO_INCREMENT,
+  `id_pedido` int(11) DEFAULT NULL,
+  `id_endereco_envio` int(11) DEFAULT NULL,
+  `valor` float DEFAULT NULL,
+  `pago` tinyint(1) DEFAULT NULL,
+  `id_forma_pagamento` tinyint(4) DEFAULT NULL,
+  `data_pagamento` date DEFAULT NULL,
+  `enviado` tinyint(1) DEFAULT NULL,
+  `if_forma_envio` int(11) DEFAULT NULL,
+  `data_envio` date DEFAULT NULL,
+  PRIMARY KEY (`id_venda`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
