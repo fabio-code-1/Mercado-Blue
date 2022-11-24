@@ -9,7 +9,8 @@
 <section>
         <div class="row">
                 <div class="col">
-                        <h1>Produtos</h1>
+                        <h1 class="text-center">Produtos</h1>
+                        <hr>
                 </div>
         </div>
 

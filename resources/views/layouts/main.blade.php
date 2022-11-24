@@ -91,10 +91,6 @@
 
     <main>
 
-
-
-
-
         @if(session('msg'))
 
         <div class="mt-2 toast align-items-center bg-success  position-relative top-0 start-50 translate-middle-x" role="alert" aria-live="polite" aria-atomic="true">
