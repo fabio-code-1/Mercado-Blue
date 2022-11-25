@@ -59,14 +59,14 @@ class ProdutoController extends Controller
 
 
     //Pagina de crair noovos produtos
-    public function indexCreate()
+    public function create()
     {
-
+ 
         return view('/events/create_produto');
     }
 
     //Cadastrar novo produto no BD
-    public  function createProduct(Request $request)
+    public  function store(Request $request)
     {
         $obProduto = new Produto;
 
@@ -90,6 +90,9 @@ class ProdutoController extends Controller
 
             $obProduto->image = $imageName;
         }
+
+        $user = auth()->user();
+        $obProduto->user_id = $user->id;
 
         $obProduto->save();
 

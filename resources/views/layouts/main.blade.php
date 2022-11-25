@@ -39,6 +39,7 @@
                             <a class="nav-link" href="/">Home</a>
                         </li>
 
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Categorias
@@ -49,10 +50,12 @@
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="/client/create_cliente">Cadastro cliente</a></li>
                                 <li><a class="dropdown-item" href="/events/create_produto">Criar novo produto</a></li>
                             </ul>
                         </li>
+
+                        @auth
+
 
                         <li class="nav-item">
                             <a class="nav-link " aria-current="page" href="carrinho.html">
@@ -62,15 +65,38 @@
                                 Carrinho
                             </a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="finalizar_compra.html">Finalizar Compra</a>
                         </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="meus_pedidos.html">Meus Pedidos</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a href="/dashboard" class="nav-link" href="meus_pedidos.html">Meus produtos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <a href="/logout" class="nav-link" href="meus_pedidos.html" onclick="
+                                 event.preventDefault();
+                                 this.closest('form').submit();
+                                 ">Log-out</a>
+                            </form>
+                        </li>
+
+                        @endauth
+                        @guest
                         <li class="nav-item">
                             <a class="nav-link" href="/login">Login</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register">cadastre-se</a>
+                        </li>
+                        @endguest
 
                     </ul>
                     <form class="d-flex" action="/produtos" method="get">

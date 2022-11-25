@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\ClienteController;
-use App\Http\Controllers\LoginController;
+
 
 
 //Chamar o metodo index de controller  ///leva ate a home
@@ -18,20 +17,26 @@ Route::get('/welcome', [WelcomeController::class, 'index']);
 Route::get('/produtos', [ProdutoController::class, 'index']);
 
 //Chamar o metodo index de controller ProdutoController ///leva pagina de formulario para criar produtos
-Route::get('/events/create_produto', [ProdutoController::class, 'indexCreate']);
+Route::get('/events/create_produto', [ProdutoController::class, 'create'])->middleware('auth');
 
 //criar um produto no banco de dados
-Route::post('/events', [ProdutoController::class, 'createProduct']);
+Route::post('/events', [ProdutoController::class, 'store']);
 
 //apresenta o detalhe de cada produto
 Route::get('/events/{id}', [ProdutoController::class, 'show']);
 
 
-//apresenta o formulario para cadastrar cliente
-Route::get('/client/create_cliente', [ClienteController::class, 'formCliente']);
 
 
-//Chamar o metodo index de controller ProdutoController ///leva pagina produtos
-Route::get('/login', [LoginController::class, 'index']);
 
 
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
