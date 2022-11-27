@@ -76,8 +76,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/dashboard" class="nav-link" href="meus_pedidos.html">Meus produtos</a>
+                            <a class="nav-link" href="/dashboard">Pefil</a>
                         </li>
+
+                       
 
                         <li class="nav-item">
                             <form action="/logout" method="POST">

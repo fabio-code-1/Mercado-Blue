@@ -24,9 +24,17 @@
                     @foreach($produto as $product)
                     <tr>
                         <td>{{$loop->index + 1}}</td>
-                        <td><a href="/events/{{ $product->id }}">{{ $product->titulo }}</a></td>
+                        <td><a class="link-info" href="/events/{{ $product->id }}">{{ $product->titulo }}</a></td>
                         <td>0</td>
-                        <td><a href="#">Editar</a> <a href="#">Deletar</a></td>
+                        <td>
+                            <a href="#" class="btn btn-warning">Editar</a>
+
+                            <form action="/events/{{ $product->id }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Deletar</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

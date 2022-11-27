@@ -25,4 +25,8 @@ Route::post('/events', [ProdutoController::class, 'store']);
 //apresenta o detalhe de cada produto
 Route::get('/events/{id}', [ProdutoController::class, 'show']);
 
+//Routa que deleta um produto criado pelo usuario
+Route::delete('events/{id}', [ProdutoController::class, 'destroy']);
+
+//Apresenta a dashboard do usuario
 Route::get('/dashboard', [ProdutoController::class, 'dashboard'])->middleware('auth');

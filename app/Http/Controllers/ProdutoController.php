@@ -121,6 +121,14 @@ class ProdutoController extends Controller
 
         return view('events.dashboard', [ 'produto'=>$produto ] );
     }
+
+    public function destroy($id){
+
+        Produto::findOrFail($id)->delete();
+        
+        return redirect('/dashboard')->with('msg', 'Produto excluido com sucesso!');
+    }
 }
 
 
+ 
