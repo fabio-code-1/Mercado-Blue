@@ -26,7 +26,13 @@ Route::post('/events', [ProdutoController::class, 'store']);
 Route::get('/events/{id}', [ProdutoController::class, 'show']);
 
 //Routa que deleta um produto criado pelo usuario
-Route::delete('events/{id}', [ProdutoController::class, 'destroy']);
+Route::delete('/events/{id}', [ProdutoController::class, 'destroy'])->middleware('auth');
+
+//Routa que manda os dados de um produto criado pelo usuario para a view wdit_produto
+Route::get('/events/edit/{id}', [ProdutoController::class, 'edit'])->middleware('auth');
+
+//Routa que atualiza um produto criado pelo usuario
+Route::put('/events/update/{id}', [ProdutoController::class, 'update'])->middleware('auth');
 
 //Apresenta a dashboard do usuario
 Route::get('/dashboard', [ProdutoController::class, 'dashboard'])->middleware('auth');

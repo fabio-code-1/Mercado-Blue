@@ -128,6 +128,35 @@ class ProdutoController extends Controller
         
         return redirect('/dashboard')->with('msg', 'Produto excluido com sucesso!');
     }
+
+    public function edit($id){
+        $produto = Produto::findOrFail($id);
+
+        return view('events.edit_produto', ['produto' => $produto]);
+    }
+
+    public function update(Request $request){
+        $data = $request->all();
+
+        
+        // image upload
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime('now')) . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+
+            $data['image'] = $imageName;
+        }
+
+         Produto::findOrFail($request->id)->update($data);
+
+         return redirect('/dashboard')->with('msg', 'Produto editado com sucesso!');
+    }
 }
 
 

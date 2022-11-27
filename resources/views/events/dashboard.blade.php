@@ -27,7 +27,7 @@
                         <td><a class="link-info" href="/events/{{ $product->id }}">{{ $product->titulo }}</a></td>
                         <td>0</td>
                         <td>
-                            <a href="#" class="btn btn-warning">Editar</a>
+                            <a href="/events/edit/{{ $product->id }}" class="btn btn-warning">Editar</a>
 
                             <form action="/events/{{ $product->id }}" method="post">
                                 @csrf
