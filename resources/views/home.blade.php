@@ -99,10 +99,10 @@
                             <div class="card-body">
                                 <h6 class="card-title produtoTitle text-dark">{{$product->titulo}}</h6>
 
-                                <mark>{{date('d/m/y', strtotime($product->created_at))}}</mark>
+                                <mark>{{date('d/m/y', strtotime($product->created_at))}}</mark><br>
+                                <small class="card-text text-info bg-dark">Autor:  </small>
 
                                 <p class="card-text produto_subTitle text-dark" style="height: 70px;">{{$product->descricao}}</p>
-                                <p class="card-text text-danger">de: R$ <span style="text-decoration:line-through;">349.50</span></p>
                                 <p class="card-text text-success">por: R$ <b>{{$product->preco}}</b></p>
                                 <a class="btn btn-info card-link" href="/events/{{$product->id}}">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -113,7 +113,7 @@
                         </div>
                     </div>
 
-                    
+
                     @endforeach
 
                     @if(count($produto) == 0)
@@ -122,6 +122,8 @@
 
                     @endif
                     <p class="mt-3"> {{$produto->links()}}</p>
+
+                    
                 </div>
             </section>
 

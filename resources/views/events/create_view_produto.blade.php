@@ -10,8 +10,10 @@
         <div class="col-sm-6" style="width:30%">
 
             <img class=" w-100 h-100 img-fluid img-thumbnail" src="/img/events/{{ $product->image }}" alt="{{ $product->titulo }}">
-            
             <figcaption class="blockquote-footer mt-1">
+               Autor: <cite title="Source Title">{{$produtoWoner['name']}}</cite>
+            </figcaption>
+            <figcaption class="blockquote-footer ">
                 Data de criação: <cite title="Source Title">{{date('d/m/y', strtotime($product->created_at))}}</cite>
             </figcaption>
             <figcaption class="blockquote-footer">

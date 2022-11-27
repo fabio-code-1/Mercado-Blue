@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Models\User;
 
 class ProdutoController extends Controller
 {
@@ -53,7 +54,7 @@ class ProdutoController extends Controller
 
         return view('/produtos', [
             'produto' => $produto,
-            'pagina' => $pagina
+            'pagina' => $pagina, 
         ]);
     }
 
@@ -104,7 +105,13 @@ class ProdutoController extends Controller
 
         $product = Produto::findOrFail($id);
 
-        return view('events.create_view_produto',['product' => $product]);
+        $produtoWoner = User::where('id', $product->user_id)->first()->ToArray();
+
+        
+        return view('events.create_view_produto',[
+            'product' => $product,
+            'produtoWoner'=> $produtoWoner
+        ]);
     }
 }
 
