@@ -113,6 +113,14 @@ class ProdutoController extends Controller
             'produtoWoner'=> $produtoWoner
         ]);
     }
+
+    public function dashboard(){
+        $user = auth()->user();
+
+        $produto = $user->produtos;
+
+        return view('events.dashboard', [ 'produto'=>$produto ] );
+    }
 }
 
 

@@ -1,0 +1,13 @@
+#tabela-dashboard th{
+   width: 25%;
+}
+
+#tabela-dashboard a{
+    color: white;
+   text-decoration: none;
+ }
+
+ #tabela-dashboard a:hover{
+    color: rgb(204, 23, 23);
+    text-decoration: none;
+ }

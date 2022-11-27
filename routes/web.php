@@ -25,18 +25,4 @@ Route::post('/events', [ProdutoController::class, 'store']);
 //apresenta o detalhe de cada produto
 Route::get('/events/{id}', [ProdutoController::class, 'show']);
 
-
-
-
-
-
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+Route::get('/dashboard', [ProdutoController::class, 'dashboard'])->middleware('auth');

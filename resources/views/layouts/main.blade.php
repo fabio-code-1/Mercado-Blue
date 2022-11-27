@@ -16,6 +16,7 @@
     <!-- CSS da aplicação -->
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
 </head>
 <div class="container-fluid">
 
