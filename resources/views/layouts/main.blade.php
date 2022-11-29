@@ -18,90 +18,102 @@
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/dashboard.css">
 </head>
-<div class="container-fluid">
-
-    <header>
-
-        <nav class="navbar navbar-expand-lg navbar-dark ">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" fill="currentColor" class="bi bi-hand-index-thumb mb-2" viewBox="0 0 16 16">
-                        <path d="M6.75 1a.75.75 0 0 1 .75.75V8a.5.5 0 0 0 1 0V5.467l.086-.004c.317-.012.637-.008.816.027.134.027.294.096.448.182.077.042.15.147.15.314V8a.5.5 0 0 0 1 0V6.435l.106-.01c.316-.024.584-.01.708.04.118.046.3.207.486.43.081.096.15.19.2.259V8.5a.5.5 0 1 0 1 0v-1h.342a1 1 0 0 1 .995 1.1l-.271 2.715a2.5 2.5 0 0 1-.317.991l-1.395 2.442a.5.5 0 0 1-.434.252H6.118a.5.5 0 0 1-.447-.276l-1.232-2.465-2.512-4.185a.517.517 0 0 1 .809-.631l2.41 2.41A.5.5 0 0 0 6 9.5V1.75A.75.75 0 0 1 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.271-2.715a2 2 0 0 0-1.99-2.199h-.581a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.632 2.632 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z" />
-                    </svg>
-                    <b>Mercado-Blue</b>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
-                        </li>
 
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorias
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/produtos">Produtos</a></li>
-                                <li><a class="dropdown-item" href="/welcome">Welcome</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="/events/create_produto">Criar novo produto</a></li>
-                            </ul>
-                        </li>
-
-                        @auth
+<div class="container-fluid" id="page-container">
+    <div id="content-wrap">
+        <header>
 
 
-                        <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="carrinho.html">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" style="position: relative; top: -3px;">
-                                    <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-                                </svg>
-                                Carrinho
-                            </a>
-                        </li>
+            <nav class="navbar navbar-expand-lg navbar-dark " id="navbar">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" fill="currentColor" class="bi bi-hand-index-thumb mb-2" viewBox="0 0 16 16">
+                            <path d="M6.75 1a.75.75 0 0 1 .75.75V8a.5.5 0 0 0 1 0V5.467l.086-.004c.317-.012.637-.008.816.027.134.027.294.096.448.182.077.042.15.147.15.314V8a.5.5 0 0 0 1 0V6.435l.106-.01c.316-.024.584-.01.708.04.118.046.3.207.486.43.081.096.15.19.2.259V8.5a.5.5 0 1 0 1 0v-1h.342a1 1 0 0 1 .995 1.1l-.271 2.715a2.5 2.5 0 0 1-.317.991l-1.395 2.442a.5.5 0 0 1-.434.252H6.118a.5.5 0 0 1-.447-.276l-1.232-2.465-2.512-4.185a.517.517 0 0 1 .809-.631l2.41 2.41A.5.5 0 0 0 6 9.5V1.75A.75.75 0 0 1 6.75 1zM8.5 4.466V1.75a1.75 1.75 0 1 0-3.5 0v6.543L3.443 6.736A1.517 1.517 0 0 0 1.07 8.588l2.491 4.153 1.215 2.43A1.5 1.5 0 0 0 6.118 16h6.302a1.5 1.5 0 0 0 1.302-.756l1.395-2.441a3.5 3.5 0 0 0 .444-1.389l.271-2.715a2 2 0 0 0-1.99-2.199h-.581a5.114 5.114 0 0 0-.195-.248c-.191-.229-.51-.568-.88-.716-.364-.146-.846-.132-1.158-.108l-.132.012a1.26 1.26 0 0 0-.56-.642 2.632 2.632 0 0 0-.738-.288c-.31-.062-.739-.058-1.05-.046l-.048.002zm2.094 2.025z" />
+                        </svg>
+                        <b>Mercado-Blue</b>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-md-center" id="navbarSupportedContent">
+                        <ul class="navbar-nav ">
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="finalizar_compra.html">Finalizar Compra</a>
-                        </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="meus_pedidos.html">Meus Pedidos</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="/dashboard">Pefil</a>
-                        </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categorias
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="/produtos">Produtos</a></li>
+                                    <li><a class="dropdown-item" href="/welcome">Welcome</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="/events/create_produto">Criar novo produto</a></li>
+                                </ul>
+                            </li>
 
-                       
+                            @auth
 
-                        <li class="nav-item">
-                            <form action="/logout" method="POST">
-                                @csrf
-                                <a href="/logout" class="nav-link" href="meus_pedidos.html" onclick="
+
+                            <li class="nav-item">
+                                <a class="nav-link " aria-current="page" href="carrinho.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" style="position: relative; top: -3px;">
+                                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
+                                    </svg>
+                                    Carrinho
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="finalizar_compra.html">Finalizar Compra</a>
+                            </li>
+
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Usuario
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-dark" href="/dashboard">Pefil</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <form action="/logout" method="POST">
+                                            @csrf
+                                            <a href="/logout" class="nav-link text-dark" href="meus_pedidos.html" onclick="
                                  event.preventDefault();
                                  this.closest('form').submit();
                                  ">Log-out</a>
-                            </form>
-                        </li>
+                                        </form>
+                                    </li>
 
-                        @endauth
-                        @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/register">cadastre-se</a>
-                        </li>
-                        @endguest
 
-                    </ul>
+                                </ul>
+                            </li>
+
+
+
+
+
+
+
+                            @endauth
+                            @guest
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+                            @endguest
+
+                        </ul>
+
+                    </div>
+
                     <form class="d-flex" action="/produtos" method="get">
                         <input class="form-control me-2" name="search" type="text" placeholder="Procurar..." aria-label="Search">
                         <button class="btn btn-primary" type="submit" style="width: 50%;">
@@ -113,34 +125,34 @@
                         </button>
                     </form>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </header>
 
-    </header>
+        <main>
 
-    <main>
 
-        @if(session('msg'))
+            @if(session('msg'))
 
-        <div class="mt-2 toast align-items-center bg-success  position-relative top-0 start-50 translate-middle-x" role="alert" aria-live="polite" aria-atomic="true">
-            <div class="d-flex ">
-                <div class="toast-body  text-light">
-                    {{session('msg')}}
+            <div class="mt-2 toast align-items-center bg-success  position-relative top-0 start-50 translate-middle-x" role="alert" aria-live="polite" aria-atomic="true">
+                <div class="d-flex ">
+                    <div class="toast-body  text-light">
+                        {{session('msg')}}
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto " aria-label="Close" data-bs-dismiss="toast"></button>
                 </div>
-                <button type="button" class="btn-close btn-close-white me-2 m-auto " aria-label="Close" data-bs-dismiss="toast"></button>
             </div>
-        </div>
 
-        @endif
+            @endif
 
-        <!-- coloca o conteudo de cada pagina -->
-        @yield('content')
+            <!-- coloca o conteudo de cada pagina -->
+            @yield('content')
 
-    </main>
 
-    <footer class="mt-5">
+        </main>
+    </div>
 
-        <div class="card mt-2">
+    <footer>
+        <div class="card">
             <div class="card-header">
                 <ul class="nav nav-pills card-header-pills">
 
@@ -194,9 +206,7 @@
             </div>
 
         </div>
-
     </footer>
-
 </div>
 
 <script src="/js/script.js"></script>

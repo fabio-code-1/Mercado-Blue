@@ -36,3 +36,6 @@ Route::put('/events/update/{id}', [ProdutoController::class, 'update'])->middlew
 
 //Apresenta a dashboard do usuario
 Route::get('/dashboard', [ProdutoController::class, 'dashboard'])->middleware('auth');
+
+//Rota para carrinho
+Route::post('/events/join/{id}', [ProdutoController::class, 'joinCarrinho'])->middleware('auth');

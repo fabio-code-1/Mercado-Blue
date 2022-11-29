@@ -43,7 +43,7 @@
         </div>
         @else
         <p>Você ainda não criou nenhum produto! <a href="/events/create_produto">Criar produto</a> </p>
-        :@endif
+        @endif
     </div>
 </div>
 </div>
