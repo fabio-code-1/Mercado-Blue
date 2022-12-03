@@ -49,11 +49,8 @@
 
             <form action="/events/join/{{$product->id}}" method="post">
                 @csrf
-                <a href="/events/join/{{$product->id}}" class="btn btn-success" onclick="event.preventDefault(); this.closest('form').submit();">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16" style="position: relative; top: -3px;">
-                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-                    </svg>
-                    Adicionar ao carrinho</a>
+                <a href="/events/join/{{$product->id}}" class="btn btn-primary" onclick="event.preventDefault(); this.closest('form').submit();">
+                    Participar Sorteio!</a>
             </form>
 
             <div class="input-group flex-nowrap  w-50">
@@ -182,8 +179,27 @@
                     <h2 class="card-header text-light" style="background-color: rgb(59, 59, 94); text-align: center;">
                         Avaliações dos clientes
                     </h2>
-                    <div class="card-body">
+                    <div class="card-body text-dark">
+                        <small class="text-secondary">Data</small><br>
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd 
+                        <button class=" mx-5 btn btn-danger">X</button>  <br>
 
+                        <small class="text-secondary">Data</small><br>
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd 
+                        <button class=" mx-5 btn btn-danger">X</button>  <br>
+
+                        <small class="text-secondary">Data</small><br>
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd 
+                        <button class=" mx-5 btn btn-danger">X</button>  <br>
+
+                        <small class="text-secondary">Data</small><br>
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd 
+                        <button class=" mx-5 btn btn-danger">X</button>  <br>
+                        
+                        <small class="text-secondary">Data</small><br>
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd 
+                        <button class=" mx-5 btn btn-danger">X</button>  <br>
+                    
                         <!-- comentarios -->
 
                     </div>
@@ -200,7 +216,7 @@
                 <h5 class="mt-3">Comentario</h5>
                 <div class="form-floating">
                     <textarea class="form-control" name="comentario" placeholder="Leave a comment here" id="comentario" style="height: 100px"></textarea>
-                    <label for="comentario">Digite seu comentario...</label>
+                    <label for="comentario" class="text-dark">Digite seu comentario...</label>
                 </div>
 
             </div>
@@ -211,6 +227,7 @@
         </form>
     </div>
 </section>
+
 
 
 

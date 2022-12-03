@@ -63,7 +63,15 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Produto');
     }
 
-    public function eventsAsParticipant(){
+    public function sorteio(){
         return $this->belongsToMany('App\Models\Produto');
     }
+
+    public function comentario(){
+        return $this->hasMany(Comentario::class, 'user_id', 'id');
+    }
+
+    
+
+  
 }

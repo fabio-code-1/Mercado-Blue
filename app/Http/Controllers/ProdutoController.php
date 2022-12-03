@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comentario;
 use Illuminate\Http\Request;
 use App\Models\Produto;
 use App\Models\User;
@@ -72,7 +73,6 @@ class ProdutoController extends Controller
         $obProduto = new Produto;
 
         $obProduto->titulo = $request->titulo;
-        $obProduto->preco = $request->preco;
         $obProduto->preco = $request->preco; //foi feito uma ateração no model
         $obProduto->descricao = $request->descricao;
         $obProduto->items = $request->items; //foi feito uma ateração no model
@@ -103,7 +103,6 @@ class ProdutoController extends Controller
 
     public function show($id)
     {
-
         $product = Produto::findOrFail($id);
 
         $produtoWoner = User::where('id', $product->user_id)->first()->ToArray();
@@ -111,7 +110,8 @@ class ProdutoController extends Controller
 
         return view('events.create_view_produto', [
             'product' => $product,
-            'produtoWoner' => $produtoWoner
+            'produtoWoner' => $produtoWoner,
+          
         ]);
     }
 
@@ -163,7 +163,7 @@ class ProdutoController extends Controller
         return redirect('/dashboard')->with('msg', 'Produto editado com sucesso!');
     }
 
-    public function joinCarrinho($id)
+    public function joinSorteio($id)
     {
         $user = auth()->user();
 
@@ -171,6 +171,8 @@ class ProdutoController extends Controller
 
         $produto = Produto::findOrFail($id);
 
-        return redirect('/dashboard')->with('msg', $produto->titulo . ': adicionado ao carrinho!');
+        return redirect('/dashboard')->with('msg', $produto->titulo . ': participando do torneio');
     }
+
+
 }

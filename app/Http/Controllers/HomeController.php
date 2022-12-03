@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Produto;
+use App\Models\Home;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -14,15 +15,18 @@ class HomeController extends Controller
 
         $produto= Produto::simplePaginate(4);
         
-
+ 
        
 
         $dados = [
             
             'produto'=>$produto
             
+            
         ];
 
         return view('home',$dados);
     }
+
+ 
 }

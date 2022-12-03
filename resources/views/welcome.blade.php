@@ -8,15 +8,19 @@
 <h1>Regasta clientes</h1>
 <hr>
 <h3>Dados dos enventos acessando as propriedades</h3>
-@foreach($produto as $event)
 
-        <p>Nome: {{$event->titulo}}</p>
-      
+@if($user)
 
-@endforeach
+<p>{{$user->name}}</p><br>
+<p>{{$user->email}}</p><br>
+<p>{{$user->id}}</p><br>
 
-{{$produto->links()}}
+@endif
 
-{{-- Comentarioo com blade, nao mostra no html na pagina --}}
+@if($comentario)
+    @foreach($comentario as $coments)
+    <p>{{$coments->id}} :: {{$coments->comentario}}</p><br>
+    @endforeach
+@endif
 
 @endsection

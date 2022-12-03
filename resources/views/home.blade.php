@@ -100,7 +100,7 @@
                                 <h6 class="card-title produtoTitle text-dark">{{$product->titulo}}</h6>
 
                                 <mark>{{date('d/m/y', strtotime($product->created_at))}}</mark><br>
-                                <small class="card-text text-info bg-dark">Autor:  </small>
+                                <small class="card-text text-info bg-dark">Sorteio</small>
 
                                 <p class="card-text produto_subTitle text-dark" style="height: 70px;">{{$product->descricao}}</p>
                                 <p class="card-text text-success">por: R$ <b>{{$product->preco}}</b></p>
@@ -122,6 +122,10 @@
 
                     @endif
                     <p class="mt-3"> {{$produto->links()}}</p>
+
+                    <hr>
+
+                   
 
                     
                 </div>

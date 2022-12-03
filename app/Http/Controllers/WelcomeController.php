@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Cliente;
 use App\Models\User;
 use App\Models\Produto;
-
+use App\Models\Comentario;
 class WelcomeController extends Controller
 {
     public function index()
@@ -17,12 +17,23 @@ class WelcomeController extends Controller
         // $events = Cliente::all();
         // $eventoUser = User::all();
 
-        $eventoProduto = Produto::simplePaginate(1);
-        
+    
         return view('welcome', [
             //enviando todos os enventos para view
-   
-            'produto'=>$eventoProduto
+        ]);
+    }
+
+    public function show($id)
+    {
+        $user = User::where('id', $id)->first();
+
+        $comentario = $user->comentario()->get();
+        
+       
+
+        return view('welcome', [
+            'user' => $user,
+            'comentario' => $comentario
         ]);
     }
 }
