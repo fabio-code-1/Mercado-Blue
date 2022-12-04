@@ -3,9 +3,8 @@
 @section('title', 'DASHBOARD')
 
 @section('content')
-
 <div class="col-md-10 offset-md-1 mt-2">
-    <h1>Meus Produtos </h1>
+    <h2 class="text-center mt-2">Meus Produtos </h2 class="text-center mt-2">
     <hr>
     <div class="row">
         <div class="col">
@@ -47,7 +46,7 @@
     </div>
 
 
-    <h1>Sorteios </h1>
+    <h2 class="text-center mt-2">Sorteios </h2 class="text-center mt-2">
     <hr>
     <div class="row">
         <div class="col">
@@ -78,7 +77,7 @@
 
 
 
-    <h1>Carrinho </h1>
+    <h2 class="text-center mt-2">Carrinho </h2 class="text-center mt-2">
     <hr>
     <div class="row">
         <div class="col">

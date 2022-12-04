@@ -47,11 +47,25 @@
             </ul>
             @endif
 
-            <form action="/events/join/{{$product->id}}" method="post">
-                @csrf
-                <a href="/events/join/{{$product->id}}" class="btn btn-primary" onclick="event.preventDefault(); this.closest('form').submit();">
-                    Participar Sorteio!</a>
-            </form>
+
+            <ul>
+
+                <li style="list-style-type:none; display:flex;">
+                    <h5>
+                        <form action="/events/join/{{$product->id}}" method="post">
+                            @csrf
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                                <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z" />
+                            </svg>
+                            <a href="/events/join/{{$product->id}}" class="btn btn-warning" onclick="event.preventDefault(); this.closest('form').submit();">
+                                Participar Sorteio!</a>
+                        </form>
+                    </h5>
+                </li>
+            </ul>
+
+
+
 
             <div class="input-group flex-nowrap  w-50">
                 <span class="input-group-text" id="addon-wrapping">Quantidade</span>
@@ -181,25 +195,25 @@
                     </h2>
                     <div class="card-body text-dark">
                         <small class="text-secondary">Data</small><br>
-                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd 
-                        <button class=" mx-5 btn btn-danger">X</button>  <br>
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd
+                        <button class=" mx-5 btn btn-danger">X</button> <br>
 
                         <small class="text-secondary">Data</small><br>
-                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd 
-                        <button class=" mx-5 btn btn-danger">X</button>  <br>
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd
+                        <button class=" mx-5 btn btn-danger">X</button> <br>
 
                         <small class="text-secondary">Data</small><br>
-                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd 
-                        <button class=" mx-5 btn btn-danger">X</button>  <br>
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd
+                        <button class=" mx-5 btn btn-danger">X</button> <br>
 
                         <small class="text-secondary">Data</small><br>
-                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd 
-                        <button class=" mx-5 btn btn-danger">X</button>  <br>
-                        
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd
+                        <button class=" mx-5 btn btn-danger">X</button> <br>
+
                         <small class="text-secondary">Data</small><br>
-                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd 
-                        <button class=" mx-5 btn btn-danger">X</button>  <br>
-                    
+                        <b>Nome</b> comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd comentario loreminpusem ajskda jasdja sdhhasd lasd
+                        <button class=" mx-5 btn btn-danger">X</button> <br>
+
                         <!-- comentarios -->
 
                     </div>
